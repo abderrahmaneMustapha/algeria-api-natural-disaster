@@ -8,4 +8,6 @@
 
 - [recherche catalogue](/utils/dataResources/files/recherche_catalogue_0_1602169384.csv)
 
+- [kaggle data set (608 mb)](https://www.kaggle.com/danielpe/earthquakes)
+
 [click here to see more](/utils/dataResources/files/more.md) ...
