@@ -10,3 +10,5 @@ this repository is an external dependency of the [Algerian Api](https://github.c
 
  I have managed to collect 1381 earthquakes happened in Algeria.
  Now i am working on defining the exact city or Wilaya of the earthquake.
+
+here is  the dataset of the earthquakes [click here](/utils/dataResources/files/earthquakes/algeria_consolidated_data.csv)
