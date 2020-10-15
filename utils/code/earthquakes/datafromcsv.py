@@ -1,13 +1,43 @@
 import pandas as pd
+from geopy.geocoders import Nominatim
 
+import time
 ## this repo doesnt contain consolidated_data.csv because of his size (604mb)
 ## if you want download this file check
 ## https://www.kaggle.com/danielpe/earthquakes
 
 ## extract algerian places only from  consolidated_data.csv with lat and long and depth
+
+#read consolidated_data.csv (contains data from 1970 to 2019)
 df = pd.read_csv("../../dataResources/files/earthquakes/consolidated_data.csv", usecols=[1,2,3,4,14])
+
+#read the data fetched from api contains earthquakes from 2019 to 2020
 df_api = pd.read_csv("../../dataResources/files/earthquakes/algeria_from_api.csv", usecols=[1,2,3,4,14])
+
+# concat the first and the secend dataset
 df_con = pd.concat([df, df_api])
+#replace Nan and na with undifined
 df_con = df_con.fillna(value="undifined")
+
+#get algeria data only
 df_con = df_con[df_con['place'].str.contains("alge", case=False)]
+
+# a list of  exact location(city or wilaya) that we are going to extract 
+# by passing the lang and lat to geopy 
+locations = []
+
+#loop trough dataset 
+for i in df_con.iloc[:, 1:3].values:
+    geolocator = Nominatim(user_agent="algeria-api")
+    location = geolocator.reverse("{}, {}".format(i[0], i[1]))
+    time.sleep(3.4)
+    try : 
+        print(location.raw["address"]['state'])
+    except KeyError:
+        print(location.raw["address"])
+    locations.append(location)
+
+df_con['place_exact'] = locations.toarray().tolist()
+
+print(df.head)
 df_con.to_csv("../../dataResources/files/earthquakes/algeria_consolidated_data.csv")

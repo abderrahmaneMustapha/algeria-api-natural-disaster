@@ -4,7 +4,7 @@ import io
 
 query = "starttime=2019-03-29T21:47:56.920Z"
 
-response = requests.get("https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&{}&latitude=28&longitude=1.66&maxradius=30".format(query))
+response = requests.get("https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&{}&latitude=36.72&longitude=3.08&maxradius=60".format(query))
 data =  response.content
 print(response.status_code)
 
