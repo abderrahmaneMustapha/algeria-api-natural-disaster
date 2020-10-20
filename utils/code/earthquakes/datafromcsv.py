@@ -24,20 +24,34 @@ df_con = df_con[df_con['place'].str.contains("alge", case=False)]
 
 # a list of  exact location(city or wilaya) that we are going to extract 
 # by passing the lang and lat to geopy 
-locations = []
+locations =[]
+
+
 
 #loop trough dataset 
+
 for i in df_con.iloc[:, 1:3].values:
-    geolocator = Nominatim(user_agent="algeria-api")
-    location = geolocator.reverse("{}, {}".format(i[0], i[1]))
-    time.sleep(3.4)
+    try :
+        geolocator = Nominatim(user_agent="algeria-api")
+        location = geolocator.reverse("{}, {}".format(i[0], i[1]))
+        time.sleep(3.4)
+    except:
+        print("Nominatim conecction exception")
+
     try : 
         print(location.raw["address"]['state'])
-    except KeyError:
-        print(location.raw["address"])
+        locations.append(location.raw["address"]['state'])
+
+    except :
+        locations.append("algeria")
+        time.sleep(10)
+     
+           
+
     locations.append(location)
 
-df_con['place_exact'] = locations.toarray().tolist()
+df_con['place_exact'] =  pd.Series( locations).values
+
 
 print(df.head)
 df_con.to_csv("../../dataResources/files/earthquakes/algeria_consolidated_data.csv")
