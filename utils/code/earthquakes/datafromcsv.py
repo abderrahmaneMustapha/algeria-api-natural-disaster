@@ -30,6 +30,7 @@ locations =[]
 
 #loop trough dataset 
 
+
 for i in df_con.iloc[:, 1:3].values:
     try :
         geolocator = Nominatim(user_agent="algeria-api")
@@ -43,12 +44,10 @@ for i in df_con.iloc[:, 1:3].values:
         locations.append(location.raw["address"]['state'])
 
     except :
-        locations.append("algeria")
+        
         time.sleep(10)
      
-           
 
-    locations.append(location)
 
 df_con['place_exact'] =  pd.Series( locations).values
 
