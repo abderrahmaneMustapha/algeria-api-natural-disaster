@@ -38,14 +38,18 @@ for i in df_con.iloc[:, 1:3].values:
         time.sleep(3.4)
     except:
         print("Nominatim conecction exception")
+        locations.append("algeria")
+        continue
 
     try : 
         print(location.raw["address"]['state'])
         locations.append(location.raw["address"]['state'])
+        
 
     except :
         
         time.sleep(10)
+        locations.append("algeria")
      
 
 
