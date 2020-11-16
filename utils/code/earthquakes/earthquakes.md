@@ -1,3 +1,2 @@
-# Webscraper
 
-the script that we use to get data
+# the script that we use to get  earthquakes data
