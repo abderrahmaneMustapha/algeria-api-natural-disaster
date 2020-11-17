@@ -1,7 +1,7 @@
 ## Contributing to  algeria natural disaster api 
 
 Contributions are always welcome. Before contributing please read the
-[code of conduct](https://github.com/dzcode-io/dzcode.io/blob/master/.github/CODE_OF_CONDUCT.md)
+[code of conduct](https://github.com/abderrahmaneMustapha/algeria-api-natural-disaster/blob/main/.github/CODE_OF_CONDUCT.md)
 & [search the issue tracker](https://github.com/abderrahmaneMustapha/algeria-api-natural-disaster/issues);
 your issuemay have already been discussed or fixed in `main`. To contribute, 
 & [send a pull request](https://github.com/abderrahmaneMustapha/algeria-api-natural-disaster/pulls).
