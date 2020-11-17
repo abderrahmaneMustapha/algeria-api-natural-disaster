@@ -1,3 +1,4 @@
+# Resources List
 
 http://earthquake.usgs.gov/earthquakes/search/
 http://quake.geo.berkeley.edu/anss/
@@ -160,7 +161,7 @@ http://www.bible.ca/pre-earthquakes-history-data.htm
 https://www.un.org/depts/los/clcs_new/sources/data_portals_holders_websites.pdf
 http://volcanocafe.wordpress.com/earthquake-databases/
 http://quake.geo.berkeley.edu/ncedc/other-catalogs.html
-Regional Catalogs:
+## Regional Catalogs:
 http://www.ncedc.org/ncedc/catalog-search.html
 http://www.data.scec.org/eq-catalogs/
 http://www.okgeosurvey1.gov/pages/earthquakes/catalogs.php
@@ -196,29 +197,30 @@ http://seis-bykl.ru/modules.php?name=Seismo_vz
 http://seis-bykl.ru/modules.php?name=Data
 http://www.seismo.ethz.ch/prod/catalog/index_EN
 http://www.ceme.gsras.ru/cgi-bin/ctl_main.pl
-Extra Catalog Websites:
+## Extra Catalog Websites:
 http://www.iris.edu/hq/
 http://www.isc.ac.uk/iscgem/
 http://earthquake.usgs.gov/data/centennial/
 http://seismograph.ru/
 http://ru.wikipedia.org/wiki/Землетрясения_в_России
-Catalogs In Progress:
+
 http://www.pnsn.org/seismograms/pnsn-data-products/earthquake-catalogs
-Outdated Catalogs:
+
 http://www.iris.edu/SeismiQuery/sq-eventsmag.htm
 http://emec.gfz-potsdam.de/pub/introduction/introduction_frame.html?x=134&y=21
 https://archive.org/details/earthquakecatal00sciegoog
 http://nauka1941-1945.ru/files/pdf/EB_1941_AKS_00000207.pdf
-Sparse - Catalogs for Other Purposes:
+
 http://www.globalcmt.org/CMTsearch.html
 Journal Articles which Reference Catalogs:
 http://link.springer.com/article/10.1007%2Fs10950-012-9335-2
 http://www.bssaonline.org/content/103/5/2739.abstract?rss=1
 http://srl.geoscienceworld.org/content/80/4/609.extract
 http://geophy.pku.edu.cn/statsei8/file/Arrachement-CSEP_test_region.pdf
-List of Fake Earthquake Events:
+## List of Fake Earthquake Events:
 http://emec.gfz-potsdam.de/pub/fake_events/fake_events_frame.html
-Portal / Reference Websites:
+
+## Portal / Reference Websites:
 http://www.isc.ac.uk/
 http://www.emidius.eu/SHEEC/
 http://en.wikipedia.org/wiki/List_of_deadly_earthquakes_since_1900
