@@ -66,4 +66,5 @@ class DataFromCsv():
 
     #separating languages
     def separateLang(self):
-        
+         df = pd.read_csv("../../dataResources/files/earthquakes/algeria_consolidated_data.csv", usecols=[6])
+         

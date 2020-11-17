@@ -2,13 +2,13 @@
 
 this repository is an external dependency of the [Algerian Api](https://github.com/Fcmam5/algeria-api) ,  provide a structured JSON and XML data that can be found in [WialyaNaturalDisasterList.json](/data/WialyaNaturalDisasterList.json) and [WialyaNaturalDisasterList.xml](/data/WialyaNaturalDisasterList.xml)
 
-## Resources
+## Meta
 
- Check this folder  [Resources](/utils/dataResources/dataResources.md)
+### Resources
 
- or this list of resources that we are using to get Data :
+ A list of resources that we are using to get Data :
 
-### earthquakes
+#### earthquakes
 
 - [catnat]( https://www.catnat.net/donneesstats/bd-catnat)
 
@@ -17,17 +17,12 @@ this repository is an external dependency of the [Algerian Api](https://github.c
 - [recherche catalogue](/utils/dataResources/files/recherche_catalogue_0_1602169384.csv)
 
 - [kaggle data set (608 mb)](https://www.kaggle.com/danielpe/earthquakes)
-- [earthquake usgs api ](https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=20100907&latitude=28&longitude=2.&maxradius=50)
 
-### floods
+- [earthquake usgs api](https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=20100907&latitude=28&longitude=2.&maxradius=50)
+
+#### floods
 
 - nothing to see here yet
 
 [click here](/utils/dataResources/files/more.md)  to see more data resources that i haven't check yet, feel free to add  more resources, or review existing resources
 
-## Progress
-
- I have managed to collect 1381 earthquakes happened in Algeria.
- Now i am working on defining the exact city or Wilaya of the earthquake.
-
-here is the dataset of the earthquakes [click here](/utils/dataResources/files/earthquakes/algeria_consolidated_data.csv)

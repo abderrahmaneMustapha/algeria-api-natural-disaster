@@ -1,0 +1,17 @@
+protect main branch
+create new branch  
+pull request review : )
+read md
+pull request md
+issues md
+
+when someone want add issues : give him choices (bug , enchacement, question redirect)
+bug  : 
+ tempalte 
+
+
+guide line contribution
+code of conduct
+
+how freindly :
+insight > community > see table
