@@ -26,3 +26,7 @@ this repository is an external dependency of the [Algerian Api](https://github.c
 
 [click here](/utils/dataResources/files/more.md)  to see more data resources that i haven't check yet, feel free to add  more resources, or review existing resources
 
+
+## License
+
+Copyright (c) 2020  Licensed under the MIT license.
