@@ -1,6 +1,6 @@
 import pandas as pd
 from geopy.geocoders import Nominatim
-
+import re
 import time
 
 class DataFromCsv():
@@ -66,5 +66,21 @@ class DataFromCsv():
 
     #separating languages
     def separateLang(self):
-         df = pd.read_csv("../../dataResources/files/earthquakes/algeria_consolidated_data.csv", usecols=[6])
-         
+        french_lang_list  =[]
+        arbic_lang_list = []
+        df = pd.read_csv("../../dataResources/files/earthquakes/algeria_consolidated_data.csv", usecols=[6])
+        for d in df.iloc[:,].values:          
+            french_lang_list.append(re.split(r"[^A-Za-zÀ-ÿ\u00C0-\u017F'\s]", d[0])[0])
+            arbic_lang_list.append(re.split(r"[^\u0621-\u064A\s]",  d[0])[-1])
+        
+        df['exact_place_ar'] = pd.Series(arbic_lang_list).values
+        df['exact_place_fr'] = pd.Series(french_lang_list).values
+
+        print(df.head)
+        df.to_csv("../../dataResources/files/earthquakes/algeria_consolidated_data.csv")
+            
+
+        
+
+d =  DataFromCsv()
+d.separateLang()
