@@ -26,6 +26,18 @@ this repository is an external dependency of the [Algerian Api](https://github.c
 
 [click here](/utils/dataResources/files/more.md)  to see more data resources that i haven't check yet, feel free to add  more resources, or review existing resources
 
+### Code
+ - [datafromapi.py](https://github.com/abderrahmaneMustapha/algeria-api-natural-disaster/blob/main/utils/code/earthquakes/datafromapi.py) : <br>
+ to get data from  earthquake.usgs.gov
+ - [datafromcsv.py](https://github.com/abderrahmaneMustapha/algeria-api-natural-disaster/blob/main/utils/code/earthquakes/datafromcsv.py) : <br>
+  to manipulate data in csv files in [here](https://github.com/abderrahmaneMustapha/algeria-api-natural-disaster/tree/main/utils/dataResources/files/earthquakes)
+ - [webscraper.py](https://github.com/abderrahmaneMustapha/algeria-api-natural-disaster/blob/main/utils/code/earthquakes/webscraper.py) : <br> 
+ scrape data from  websites in [here](https://github.com/abderrahmaneMustapha/algeria-api-natural-disaster/blob/main/utils/dataResources/files/more.md)
+### Data
+ - [algeria_from_api](https://github.com/abderrahmaneMustapha/algeria-api-natural-disaster/blob/main/utils/dataResources/files/earthquakes/algeria_from_api.csv) : <br>
+ cotains data fetched from earthquake.usgs.gov  doesn't contain a exact_place row
+- [algeria_consolidated_data.csv](https://github.com/abderrahmaneMustapha/algeria-api-natural-disaster/blob/main/utils/dataResources/files/earthquakes/algeria_consolidated_data.csv) : <br>
+final  earthquakes results 
 
 ## License
 
