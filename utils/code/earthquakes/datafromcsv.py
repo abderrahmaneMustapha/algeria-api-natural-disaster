@@ -91,11 +91,33 @@ class DataFromCsv():
         with open(json_path, 'w', encoding='utf-8') as json_file:
             json_file.write(json.dumps(data, indent=4, ensure_ascii = False))
 
+    def addWilayaCode(self, wialya_path, natural_disaster_path):
+        wilaya_file  = open(wialya_path, encoding="utf-8") 
+        wilaya_file_dict = json.load(wilaya_file)
 
+        natural_disaster_file = open(natural_disaster_path, encoding="utf-8") 
+        natural_disaster_dict =  json.load(natural_disaster_file)
         
+        data = {}
+        earthquakes_array = []
+        
+        print( natural_disaster_dict)
+        for row in natural_disaster_dict['earthquakes']:
+            for wilaya in  wilaya_file_dict:
+                if wilaya['name'] in row['exact_place_fr']:
+                    row['wilaya_code'] = wilaya['wilayacode']
+            earthquakes_array.append(row)
+            data['earthquakes'] = earthquakes_array
+
+        with open(natural_disaster_path, 'w', encoding='utf-8') as json_file:
+            json_file.write(json.dumps(data, indent=4, ensure_ascii = False))
 
 d =  DataFromCsv()
 
-CSV_PATH = "../../dataResources/files/earthquakes/algeria_consolidated_data.csv"
+# the path of earthquakes csv file
+#CSV_PATH = "../../dataResources/files/earthquakes/algeria_consolidated_data.csv"
+# the path of natural disaster json file
 JSON_PATH = "../../../data/WialyaNaturalDisasterList.json"
-d.csvToJson(JSON_PATH, CSV_PATH)
+CSV_PATH = "../../dataResources/files/earthquakes/wilaya.json"
+d.addWilayaCode(CSV_PATH ,JSON_PATH)
+
