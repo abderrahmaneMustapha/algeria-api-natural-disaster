@@ -2,7 +2,8 @@ import pandas as pd
 from geopy.geocoders import Nominatim
 import re
 import time
-
+import csv 
+import json 
 class DataFromCsv():
     
     #concatenate the two csv files
@@ -33,8 +34,7 @@ class DataFromCsv():
 
 
 
-        #loop trough dataset 
-
+        #loop trough dataset
 
         for i in df_con.iloc[:, 1:3].values:
             try :
@@ -79,8 +79,45 @@ class DataFromCsv():
         print(df.head)
         df.to_csv("../../dataResources/files/earthquakes/algeria_consolidated_data.csv")
             
-
+    def csvToJson(self, json_path, csv_path):
+        data = {}
+        with open(csv_path, encoding='utf-8') as csv_file: 
+            csv_reader = csv.DictReader(csv_file) 
+            earthquakes_array = []
+            for row in csv_reader:
+                earthquakes_array.append(row)
+                data['earthquakes'] = earthquakes_array
         
+        with open(json_path, 'w', encoding='utf-8') as json_file:
+            json_file.write(json.dumps(data, indent=4, ensure_ascii = False))
+
+    def addWilayaCode(self, wialya_path, natural_disaster_path):
+        wilaya_file  = open(wialya_path, encoding="utf-8") 
+        wilaya_file_dict = json.load(wilaya_file)
+
+        natural_disaster_file = open(natural_disaster_path, encoding="utf-8") 
+        natural_disaster_dict =  json.load(natural_disaster_file)
+        
+        data = {}
+        earthquakes_array = []
+        
+        print( natural_disaster_dict)
+        for row in natural_disaster_dict['earthquakes']:
+            for wilaya in  wilaya_file_dict:
+                if wilaya['name'] in row['exact_place_fr']:
+                    row['wilaya_code'] = wilaya['wilayacode']
+            earthquakes_array.append(row)
+            data['earthquakes'] = earthquakes_array
+
+        with open(natural_disaster_path, 'w', encoding='utf-8') as json_file:
+            json_file.write(json.dumps(data, indent=4, ensure_ascii = False))
 
 d =  DataFromCsv()
-d.separateLang()
+
+# the path of earthquakes csv file
+#CSV_PATH = "../../dataResources/files/earthquakes/algeria_consolidated_data.csv"
+# the path of natural disaster json file
+JSON_PATH = "../../../data/WialyaNaturalDisasterList.json"
+CSV_PATH = "../../dataResources/files/earthquakes/wilaya.json"
+d.addWilayaCode(CSV_PATH ,JSON_PATH)
+
